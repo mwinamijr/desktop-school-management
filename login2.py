@@ -9,64 +9,65 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtGui import QCursor
 
 
-class HayatulApp(object):
-    def __init__(self):
-        self.signUpBtn = QtWidgets.QPushButton(widget)
-        self.forgetPasswordBtn = QtWidgets.QPushButton(widget)
-        self.signUpLabel = QtWidgets.QLabel(widget)
-        self.verticalLayoutWidget = QtWidgets.QWidget(widget)
-        self.loginButton = QtWidgets.QPushButton(self.verticalLayoutWidget)
-        self.password = QtWidgets.QLineEdit(self.verticalLayoutWidget)
-        self.username = QtWidgets.QLineEdit(self.verticalLayoutWidget)
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
-        self.logo = QtWidgets.QLabel(widget)
-        self.loginTitle = QtWidgets.QLabel(widget)
-        self.forgetPassword = QtWidgets.QLabel(widget)
-
-    def login_ui(self, login):
-        login.setObjectName("widget")
-        login.resize(1000, 804)
-        login.setMinimumSize(QtCore.QSize(1000, 0))
+class Ui_widget(object):
+    def setupUi(self, widget):
+        widget.setObjectName("widget")
+        widget.setWindowModality(QtCore.Qt.NonModal)
+        widget.resize(1000, 804)
+        widget.setMinimumSize(QtCore.QSize(1000, 0))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        widget.setFont(font)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        login.setWindowIcon(icon)
-        login.setLayoutDirection(QtCore.Qt.LeftToRight)
-        login.setStyleSheet("background-color:#293b5f;")
-
-        # Logo
-        self.logo.setGeometry(QtCore.QRect(200, 40, 600, 150))
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setUnderline(True)
-        font.setWeight(75)
-        self.logo.setFont(font)
-        self.logo.setStyleSheet("color: #dbe6fd;\n"
-                                "font-size: 100px;\n"
-                                "font-family: Castellar"
-                                )
-        self.logo.setAlignment(QtCore.Qt.AlignCenter)
-        self.logo.setObjectName("logo")
-
-        # Login title
+        widget.setWindowIcon(icon)
+        widget.setLayoutDirection(QtCore.Qt.LeftToRight)
+        widget.setStyleSheet("background-color:#293b5f;")
+        widget.setInputMethodHints(QtCore.Qt.ImhNone)
+        self.loginTitle = QtWidgets.QLabel(widget)
         self.loginTitle.setGeometry(QtCore.QRect(0, 190, 1000, 121))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.loginTitle.sizePolicy().hasHeightForWidth())
+        self.loginTitle.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(40)
+        font.setUnderline(False)
+        self.loginTitle.setFont(font)
         self.loginTitle.setStyleSheet("color: #dbe6fd;\n"
-                                      "width: 100%;\n"
-                                      "font-size: 40pt"
-                                      )
+                                      "width: 100%;")
         self.loginTitle.setTextFormat(QtCore.Qt.PlainText)
         self.loginTitle.setAlignment(QtCore.Qt.AlignCenter)
         self.loginTitle.setObjectName("loginTitle")
-
-        # Login form layout
+        self.logo = QtWidgets.QLabel(widget)
+        self.logo.setGeometry(QtCore.QRect(200, 40, 600, 150))
+        self.logo.setMaximumSize(QtCore.QSize(16777215, 167772))
+        font = QtGui.QFont()
+        font.setFamily("Castellar")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setUnderline(False)
+        font.setWeight(75)
+        self.logo.setFont(font)
+        self.logo.setMouseTracking(False)
+        self.logo.setStyleSheet("color: #dbe6fd;\n"
+                                "font-size: 100px;")
+        self.logo.setAlignment(QtCore.Qt.AlignCenter)
+        self.logo.setObjectName("logo")
+        self.verticalLayoutWidget = QtWidgets.QWidget(widget)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(140, 340, 691, 341))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setObjectName("verticalLayout")
-
-        # Username
+        self.username = QtWidgets.QLineEdit(self.verticalLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(30)
+        self.username.setFont(font)
         self.username.setStyleSheet("margin-left:40px;\n"
                                     "margin-right:40px;\n"
                                     "color: grey;\n"
@@ -74,13 +75,13 @@ class HayatulApp(object):
                                     "border-radius:20px;\n"
                                     "border-bottom:3px solid white;\n"
                                     "padding: 5px;\n"
-                                    "padding-left: 15px;\n"
-                                    "font-size: 30pt"
-                                    )
+                                    "padding-left: 15px;")
         self.username.setObjectName("username")
         self.verticalLayout.addWidget(self.username)
-
-        # Password
+        self.password = QtWidgets.QLineEdit(self.verticalLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(30)
+        self.password.setFont(font)
         self.password.setStyleSheet("margin-left:40px;\n"
                                     "margin-right:40px;\n"
                                     "color: grey;\n"
@@ -88,15 +89,10 @@ class HayatulApp(object):
                                     "border-radius:20px;\n"
                                     "border-bottom:3px solid white;\n"
                                     "padding: 5px;\n"
-                                    "padding-left: 15px;\n"
-                                    "font-size: 30pt"
-                                    )
+                                    "padding-left: 15px;")
         self.password.setObjectName("password")
-        self.password.setEchoMode(QtWidgets.QLineEdit.Password)
         self.verticalLayout.addWidget(self.password)
-
-        # Login button
-        self.loginButton.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+        self.loginButton = QtWidgets.QPushButton(self.verticalLayoutWidget)
         self.loginButton.setStyleSheet("border: 4px solid \'#2541b2\';\n"
                                        " border-radius: 45px;\n"
                                        "font-size: 35px;\n"
@@ -105,26 +101,19 @@ class HayatulApp(object):
                                        " margin: 10px 200px;")
         self.loginButton.setObjectName("loginButton")
         self.verticalLayout.addWidget(self.loginButton)
-
-        # Forget password
-        self.forgetPassword.setStyleSheet("color: #dbe6fd;\n"
-                                          "width: 100%;\n"
-                                          "font-size: 10pt"
-                                          )
-        self.forgetPassword.setGeometry(QtCore.QRect(50, 710, 171, 30))
-        self.forgetPassword.setObjectName("forgotPassword")
-
         self.forgetPassword = QtWidgets.QLabel(widget)
         self.forgetPassword.setGeometry(QtCore.QRect(50, 710, 171, 30))
         font = QtGui.QFont()
         font.setPointSize(15)
         self.forgetPassword.setFont(font)
         self.forgetPassword.setObjectName("forgetPassword")
+        self.signUpLabel = QtWidgets.QLabel(widget)
         self.signUpLabel.setGeometry(QtCore.QRect(510, 710, 231, 30))
         font = QtGui.QFont()
         font.setPointSize(15)
         self.signUpLabel.setFont(font)
         self.signUpLabel.setObjectName("signUpLabel")
+        self.forgetPasswordBtn = QtWidgets.QPushButton(widget)
         self.forgetPasswordBtn.setGeometry(QtCore.QRect(340, 710, 150, 30))
         self.forgetPasswordBtn.setStyleSheet("border: 1px solid \'#2541b2\';\n"
                                              "background-color: rgb(85, 170, 255);\n"
@@ -132,6 +121,7 @@ class HayatulApp(object):
                                              "font-size: 12px;\n"
                                              "color: \'black\';")
         self.forgetPasswordBtn.setObjectName("forgetPasswordBtn")
+        self.signUpBtn = QtWidgets.QPushButton(widget)
         self.signUpBtn.setGeometry(QtCore.QRect(800, 710, 150, 30))
         self.signUpBtn.setStyleSheet("border: 1px solid \'#2541b2\';\n"
                                      "background-color: rgb(170, 255, 255);\n"
@@ -140,33 +130,12 @@ class HayatulApp(object):
                                      "color: \'black\';")
         self.signUpBtn.setObjectName("signUpBtn")
 
-        # loginButton callback
-        self.loginButton.clicked.connect(self.login_func)
+        self.retranslateUi(widget)
+        QtCore.QMetaObject.connectSlotsByName(widget)
 
-        # Reset password Button callback
-        self.forgetPasswordBtn.clicked.connect(self.forget_password_func)
-
-        # Go to sign up Button callback
-        self.signUpBtn.clicked.connect(self.gotosignup_func)
-
-        self.retranslateUi(login)
-        QtCore.QMetaObject.connectSlotsByName(login)
-
-    def login_func(self):
-        if self.username.text() != "":
-            print("logged in")
-        else:
-            print("enter username")
-
-    def forget_password_func(self):
-        print("Forget passwor clicked")
-
-    def gotosignup_func(self):
-        print("signup")
-
-    def retranslateUi(self, login):
+    def retranslateUi(self, widget):
         _translate = QtCore.QCoreApplication.translate
-        login.setWindowTitle(_translate("widget", "Hayatul Islamiya SIS"))
+        widget.setWindowTitle(_translate("widget", "Hayatul Islamiya SIS"))
         self.loginTitle.setText(_translate("widget", "Log in"))
         self.logo.setText(_translate("widget", "Hayatul"))
         self.username.setPlaceholderText(_translate("widget", "Username"))
@@ -183,7 +152,7 @@ if __name__ == "__main__":
 
     app = QtWidgets.QApplication(sys.argv)
     widget = QtWidgets.QWidget()
-    ui = HayatulApp()
-    ui.login_ui(widget)
+    ui = Ui_widget()
+    ui.setupUi(widget)
     widget.show()
     sys.exit(app.exec_())

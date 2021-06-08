@@ -3,10 +3,10 @@ from PyQt5.QtWidgets import QApplication, QLabel, QPushButton, QVBoxLayout, QWid
 from PyQt5.QtGui import QPixmap, QCursor
 from PyQt5 import QtGui, QtCore
 
-'''
+
 class HayatulApplication(object):
     def setupUi(self, window):
-'''
+
 
 app = QApplication(sys.argv)
 window = QWidget()

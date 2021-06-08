@@ -1,109 +1,264 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>widget</class>
+ <widget class="QWidget" name="widget">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>819</width>
-    <height>800</height>
+    <width>1000</width>
+    <height>804</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Calibri</family>
+   </font>
+  </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Hayatul Islamiya SIS</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>logo.png</normaloff>logo.png</iconset>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(41, 59, 95);</string>
+   <string notr="true">background-color:#293b5f;</string>
   </property>
-  <widget class="QWidget" name="formLayoutWidget">
+  <property name="inputMethodHints">
+   <set>Qt::ImhNone</set>
+  </property>
+  <widget class="QLabel" name="loginTitle">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>380</y>
-     <width>601</width>
-     <height>191</height>
+     <x>0</x>
+     <y>190</y>
+     <width>1000</width>
+     <height>121</height>
     </rect>
    </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
-     <widget class="QLabel" name="label_2">
-      <property name="styleSheet">
-       <string notr="true">color:rgb(255, 255, 255);
-font-size: 15pt;</string>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Shell Dlg 2</family>
+     <pointsize>40</pointsize>
+     <underline>false</underline>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: #dbe6fd;
+width: 100%;</string>
+   </property>
+   <property name="text">
+    <string>Log in</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::PlainText</enum>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="logo">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>40</y>
+     <width>600</width>
+     <height>150</height>
+    </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>167772</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>Castellar</family>
+     <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+     <underline>false</underline>
+    </font>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: #dbe6fd;
+font-size: 100px;</string>
+   </property>
+   <property name="text">
+    <string>Hayatul</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>340</y>
+     <width>691</width>
+     <height>341</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLineEdit" name="username">
+      <property name="font">
+       <font>
+        <pointsize>30</pointsize>
+       </font>
       </property>
-      <property name="text">
-       <string>Password:</string>
+      <property name="styleSheet">
+       <string notr="true">margin-left:40px;
+margin-right:40px;
+color: grey;
+border: 1px solid grey;
+border-radius:20px;
+border-bottom:3px solid white;
+padding: 5px;
+padding-left: 15px;</string>
+      </property>
+      <property name="placeholderText">
+       <string>Username</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="label">
-      <property name="styleSheet">
-       <string notr="true">color:rgb(255, 255, 255);
-font-size: 15pt;</string>
+    <item>
+     <widget class="QLineEdit" name="password">
+      <property name="font">
+       <font>
+        <pointsize>30</pointsize>
+       </font>
       </property>
-      <property name="text">
-       <string>Username:</string>
+      <property name="styleSheet">
+       <string notr="true">margin-left:40px;
+margin-right:40px;
+color: grey;
+border: 1px solid grey;
+border-radius:20px;
+border-bottom:3px solid white;
+padding: 5px;
+padding-left: 15px;</string>
+      </property>
+      <property name="placeholderText">
+       <string>Password</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="lineEdit_2">
+    <item>
+     <widget class="QPushButton" name="loginButton">
       <property name="styleSheet">
-       <string notr="true">color:rgb(255, 255, 255);
-font-size: 15pt;</string>
+       <string notr="true">border: 4px solid '#2541b2';
+ border-radius: 45px;
+font-size: 35px;
+color: 'white';
+padding: 25px 0;
+ margin: 10px 200px;</string>
       </property>
       <property name="text">
-       <string>jkkfgdl </string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="lineEdit">
-      <property name="styleSheet">
-       <string notr="true">color:rgb(255, 255, 255);
-font-size: 15pt;</string>
+       <string>login</string>
       </property>
      </widget>
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QLabel" name="forgetPassword">
    <property name="geometry">
     <rect>
-     <x>560</x>
-     <y>600</y>
-     <width>101</width>
-     <height>41</height>
+     <x>50</x>
+     <y>710</y>
+     <width>171</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Forget Password?</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="signUpLabel">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>710</y>
+     <width>231</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Don'n have an account?</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="forgetPasswordBtn">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>710</y>
+     <width>150</width>
+     <height>30</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(0, 170, 255);
-font: 8pt &quot;MS Shell Dlg 2&quot;;
-font-size: 20pt;</string>
+    <string notr="true">border: 1px solid '#2541b2';
+background-color: rgb(85, 170, 255);
+ border-radius: 5px;
+font-size: 12px;
+color: 'black';</string>
    </property>
    <property name="text">
-    <string>login</string>
+    <string>reset password</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QPushButton" name="signUpBtn">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>20</y>
-     <width>601</width>
-     <height>341</height>
+     <x>800</x>
+     <y>710</y>
+     <width>150</width>
+     <height>30</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid '#2541b2';
+background-color: rgb(170, 255, 255);
+ border-radius: 5px;
+font-size: 12px;
+color: 'black';</string>
+   </property>
    <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap>HIClogo2.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
+    <string>Sign up</string>
    </property>
   </widget>
  </widget>
